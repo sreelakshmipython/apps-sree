@@ -1,0 +1,25 @@
+{% extends 'base.html'%}
+{% load static %}
+
+{% block body %}
+<div class="container">
+<div class="row">
+   {% for i in song_list %}
+<div class="col-md-3">
+   <div class="card" style="{% static "style.css" %}" "width:18rem;">
+  <img src="{{i.img.url}}" class="card-img-top" alt="..." height="250">
+  <div class="card-body">
+    <h5 class="card-title">{{i.song_name}}</h5>
+
+    <a href="{% url 'songapp:detail' i.id %}" class="btn btn-primary">details</a>
+  </div>
+</div>
+</div>
+ <br>
+    {% endfor %}
+</div>
+</div>
+
+
+   {% endblock %}
+
